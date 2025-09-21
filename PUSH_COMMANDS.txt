@@ -1,0 +1,16 @@
+# Copy these commands and replace YOUR_USERNAME with your GitHub username
+
+# Navigate to project directory (if not already there)
+cd "D:\AbhishekPortfolio"
+
+# Add your GitHub repository as remote origin
+git remote add origin https://github.com/YOUR_USERNAME/abhishek-portfolio.git
+
+# Rename branch to main (modern GitHub standard)
+git branch -M main
+
+# Push your code to GitHub
+git push -u origin main
+
+# Example for username "abhishekmishra":
+# git remote add origin https://github.com/abhishekmishra/abhishek-portfolio.git

@@ -1,44 +1,50 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FaHeart, FaLinkedin, FaGithub, FaEnvelope, FaArrowUp } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FaHeart,
+  FaLinkedin,
+  FaGithub,
+  FaEnvelope,
+  FaArrowUp,
+} from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const socialLinks = [
     {
       icon: <FaLinkedin className="text-xl" />,
-      href: 'https://linkedin.com/in/abhishekmishra',
-      label: 'LinkedIn'
+      href: "https://linkedin.com/in/abhishekmishra",
+      label: "LinkedIn",
     },
     {
       icon: <FaGithub className="text-xl" />,
-      href: 'https://github.com/abhishekmishra',
-      label: 'GitHub'
+      href: "https://github.com/abhishekmishra",
+      label: "GitHub",
     },
     {
       icon: <FaEnvelope className="text-xl" />,
-      href: 'mailto:abhishek@example.com',
-      label: 'Email'
-    }
+      href: "mailto:abhimaster369@gmail.com",
+      label: "Email",
+    },
   ];
 
   const quickLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' }
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Skills", href: "#skills" },
+    { name: "Contact", href: "#contact" },
   ];
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -62,10 +68,13 @@ const Footer = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold gradient-text mb-4">Abhishek Mishra</h3>
+              <h3 className="text-2xl font-bold gradient-text mb-4">
+                Abhishek Mishra
+              </h3>
               <p className="text-gray-400 mb-6 leading-relaxed max-w-md">
-                Software Developer passionate about creating modern web applications
-                and solving complex problems through innovative technology solutions.
+                Software Developer passionate about creating modern web
+                applications and solving complex problems through innovative
+                technology solutions.
               </p>
               <div className="flex gap-4">
                 {socialLinks.map((link, index) => (
@@ -79,9 +88,7 @@ const Footer = () => {
                     whileTap={{ scale: 0.95 }}
                     aria-label={link.label}
                   >
-                    <div className="group-hover:animate-glow">
-                      {link.icon}
-                    </div>
+                    <div className="group-hover:animate-glow">{link.icon}</div>
                   </motion.a>
                 ))}
               </div>
@@ -94,7 +101,9 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">
+                Quick Links
+              </h4>
               <ul className="space-y-2">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
@@ -121,14 +130,16 @@ const Footer = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-lg font-semibold text-white mb-4">Get In Touch</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">
+                Get In Touch
+              </h4>
               <div className="space-y-3 text-gray-400">
                 <p>
                   <a
-                    href="mailto:abhishek@example.com"
+                    href="mailto:abhimaster369@gmail.com"
                     className="hover:text-primary-500 transition-colors duration-300"
                   >
-                    abhishek@example.com
+                    abhimaster369@gmail.com{" "}
                   </a>
                 </p>
                 <p>
@@ -136,7 +147,7 @@ const Footer = () => {
                     href="tel:+919876543210"
                     className="hover:text-primary-500 transition-colors duration-300"
                   >
-                    +91 9876543210
+                    +91 6392517138
                   </a>
                 </p>
                 <p>India</p>
@@ -156,15 +167,15 @@ const Footer = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                © {currentYear} Abhishek Mishra. Made with{' '}
+                © {currentYear} Abhishek Mishra. Made with{" "}
                 <motion.span
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 1, repeat: Infinity }}
                   className="text-red-500"
                 >
                   <FaHeart />
-                </motion.span>
-                {' '}and React
+                </motion.span>{" "}
+                and React
               </motion.p>
 
               <div className="flex items-center gap-4 text-sm text-gray-400">

@@ -1,12 +1,18 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { FaGithub, FaExternalLinkAlt, FaWarehouse, FaHome, FaTruck } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaWarehouse,
+  FaHome,
+  FaTruck,
+} from "react-icons/fa";
 
 const Projects = () => {
   const [ref, inView] = useInView({
     threshold: 0.1,
-    triggerOnce: true
+    triggerOnce: true,
   });
 
   const containerVariants = {
@@ -15,9 +21,9 @@ const Projects = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -26,63 +32,66 @@ const Projects = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   const projects = [
     {
-      title: 'Warehouse Management System (WMS)',
-      description: 'A comprehensive warehouse management solution built with Angular and ASP.NET Core. Features include inventory tracking, order management, and real-time reporting dashboard.',
+      title: "Warehouse Management System (WMS)",
+      description:
+        "A comprehensive warehouse management solution built with Angular and ASP.NET Core. Features include inventory tracking, order management, and real-time reporting dashboard.",
       icon: <FaWarehouse className="text-3xl" />,
-      technologies: ['Angular', 'C#', 'ASP.NET Core', 'MSSQL', 'HTML5', 'CSS3'],
+      technologies: ["Angular", "C#", "ASP.NET Core", "MSSQL", "HTML5", "CSS3"],
       features: [
-        'Real-time inventory tracking',
-        'Order processing and fulfillment',
-        'Advanced reporting and analytics',
-        'User role management',
-        'Barcode scanning integration'
+        "Real-time inventory tracking",
+        "Order processing and fulfillment",
+        "Advanced reporting and analytics",
+        "User role management",
+        "Barcode scanning integration",
       ],
-      company: 'Audex Logistics',
-      year: 'Year 1',
-      status: 'Production',
-      category: 'Full Stack'
+      company: "Audex Logistics",
+      year: "Year 1",
+      status: "Production",
+      category: "Full Stack",
     },
     {
-      title: 'SSM Residency',
-      description: 'A modern property management system for residential complexes. Built with Angular frontend and ASP.NET Core backend, featuring tenant management and maintenance tracking.',
+      title: "SSM Residency",
+      description:
+        "A modern property management system for residential complexes. Built with Angular frontend and ASP.NET Core backend, featuring tenant management and maintenance tracking.",
       icon: <FaHome className="text-3xl" />,
-      technologies: ['Angular', 'C#', 'ASP.NET Core', 'MSSQL', 'Bootstrap'],
+      technologies: ["Angular", "C#", "ASP.NET Core", "MSSQL", "Bootstrap"],
       features: [
-        'Tenant registration and management',
-        'Maintenance request tracking',
-        'Payment management system',
-        'Document management',
-        'Communication portal'
+        "Tenant registration and management",
+        "Maintenance request tracking",
+        "Payment management system",
+        "Document management",
+        "Communication portal",
       ],
-      company: 'Audex Logistics',
-      year: 'Year 1',
-      status: 'Production',
-      category: 'Full Stack'
+      company: "Audex Logistics",
+      year: "Year 1",
+      status: "Production",
+      category: "Full Stack",
     },
     {
-      title: 'Transport Management System',
-      description: 'A React-based transport management platform focused on route optimization and fleet management. Features modern UI/UX with real-time updates and responsive design.',
+      title: "Transport Management System",
+      description:
+        "A React-based transport management platform focused on route optimization and fleet management. Features modern UI/UX with real-time updates and responsive design.",
       icon: <FaTruck className="text-3xl" />,
-      technologies: ['React', 'JavaScript', 'HTML5', 'CSS3', 'REST APIs'],
+      technologies: ["React", "JavaScript", "HTML5", "CSS3", "REST APIs"],
       features: [
-        'Route planning and optimization',
-        'Fleet tracking and management',
-        'Driver assignment system',
-        'Real-time status updates',
-        'Responsive mobile interface'
+        "Route planning and optimization",
+        "Fleet tracking and management",
+        "Driver assignment system",
+        "Real-time status updates",
+        "Responsive mobile interface",
       ],
-      company: 'Oreqo Software Private Ltd',
-      year: 'Year 2',
-      status: 'In Development',
-      category: 'Frontend'
-    }
+      company: "Oreqo Software Private Ltd",
+      year: "Year 1",
+      status: "In Development",
+      category: "Frontend",
+    },
   ];
 
   return (
@@ -97,8 +106,9 @@ const Projects = () => {
         <motion.div variants={itemVariants} className="text-center mb-16">
           <h2 className="section-title">Featured Projects</h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            Here are some of the key projects I've worked on during my professional journey.
-            Each project represents different aspects of my technical expertise and problem-solving abilities.
+            Here are some of the key projects I've worked on during my
+            professional journey. Each project represents different aspects of
+            my technical expertise and problem-solving abilities.
           </p>
         </motion.div>
 
@@ -121,13 +131,19 @@ const Projects = () => {
                       <span className="bg-primary-500/20 text-primary-500 px-3 py-1 rounded-full text-xs font-medium">
                         {project.category}
                       </span>
-                      <div className="text-gray-400 text-sm">{project.company}</div>
-                      <div className="text-gray-400 text-sm">{project.year}</div>
-                      <div className={`text-xs px-2 py-1 rounded-full font-medium ${
-                        project.status === 'Production'
-                          ? 'bg-green-500/20 text-green-500'
-                          : 'bg-yellow-500/20 text-yellow-500'
-                      }`}>
+                      <div className="text-gray-400 text-sm">
+                        {project.company}
+                      </div>
+                      <div className="text-gray-400 text-sm">
+                        {project.year}
+                      </div>
+                      <div
+                        className={`text-xs px-2 py-1 rounded-full font-medium ${
+                          project.status === "Production"
+                            ? "bg-green-500/20 text-green-500"
+                            : "bg-yellow-500/20 text-yellow-500"
+                        }`}
+                      >
                         {project.status}
                       </div>
                     </div>
@@ -146,12 +162,16 @@ const Projects = () => {
 
                     {/* Key Features */}
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-3">Key Features</h4>
+                      <h4 className="text-lg font-semibold text-white mb-3">
+                        Key Features
+                      </h4>
                       <div className="grid md:grid-cols-2 gap-2">
                         {project.features.map((feature, idx) => (
                           <div key={idx} className="flex items-start gap-2">
                             <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 text-sm">{feature}</span>
+                            <span className="text-gray-300 text-sm">
+                              {feature}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -159,7 +179,9 @@ const Projects = () => {
 
                     {/* Technologies */}
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-3">Technologies Used</h4>
+                      <h4 className="text-lg font-semibold text-white mb-3">
+                        Technologies Used
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.map((tech, idx) => (
                           <span
@@ -204,19 +226,22 @@ const Projects = () => {
           variants={itemVariants}
           className="text-center mt-16 p-8 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 rounded-lg border border-primary-500/20"
         >
-          <h3 className="text-xl font-bold text-white mb-4">More Projects Coming Soon</h3>
+          <h3 className="text-xl font-bold text-white mb-4">
+            More Projects Coming Soon
+          </h3>
           <p className="text-gray-300 max-w-2xl mx-auto mb-6">
-            I'm constantly working on new projects and exploring emerging technologies.
-            Stay tuned for more exciting developments and personal projects!
+            I'm constantly working on new projects and exploring emerging
+            technologies. Stay tuned for more exciting developments and personal
+            projects!
           </p>
           <motion.button
             className="btn-primary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => {
-              const element = document.querySelector('#contact');
+              const element = document.querySelector("#contact");
               if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+                element.scrollIntoView({ behavior: "smooth" });
               }
             }}
           >

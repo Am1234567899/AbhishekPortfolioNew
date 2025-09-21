@@ -1,6 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaCode, FaRocket, FaStar } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaDownload,
+  FaCode,
+  FaRocket,
+  FaStar,
+} from "react-icons/fa";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -14,10 +22,10 @@ const Hero = () => {
       });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
     setIsLoaded(true);
 
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   const containerVariants = {
@@ -26,9 +34,9 @@ const Hero = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.5,
-        staggerChildren: 0.15
-      }
-    }
+        staggerChildren: 0.15,
+      },
+    },
   };
 
   const itemVariants = {
@@ -39,9 +47,9 @@ const Hero = () => {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99]
-      }
-    }
+        ease: [0.6, -0.05, 0.01, 0.99],
+      },
+    },
   };
 
   const floatingVariants = {
@@ -52,15 +60,15 @@ const Hero = () => {
       transition: {
         duration: 6,
         repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -70,7 +78,7 @@ const Hero = () => {
     "React Specialist",
     "Frontend Engineer",
     "Backend Developer",
-    "Software Engineer"
+    "Software Engineer",
   ];
 
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -89,18 +97,25 @@ const Hero = () => {
     y: Math.random() * 100,
     size: Math.random() * 4 + 1,
     duration: Math.random() * 10 + 10,
-    delay: Math.random() * 5
+    delay: Math.random() * 5,
   }));
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden perspective-1000">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden perspective-1000"
+    >
       {/* Advanced Background with Mouse Parallax */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Animated Mesh Gradient */}
         <div
           className="absolute inset-0 opacity-30"
           style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, #3b82f6 0%, transparent 50%), radial-gradient(circle at ${100 - mousePosition.x}% ${100 - mousePosition.y}%, #8b5cf6 0%, transparent 50%)`
+            background: `radial-gradient(circle at ${mousePosition.x}% ${
+              mousePosition.y
+            }%, #3b82f6 0%, transparent 50%), radial-gradient(circle at ${
+              100 - mousePosition.x
+            }% ${100 - mousePosition.y}%, #8b5cf6 0%, transparent 50%)`,
           }}
         />
 
@@ -125,7 +140,7 @@ const Hero = () => {
               duration: particle.duration,
               repeat: Infinity,
               delay: particle.delay,
-              ease: "easeInOut"
+              ease: "easeInOut",
             }}
           />
         ))}
@@ -136,7 +151,9 @@ const Hero = () => {
           variants={floatingVariants}
           animate="animate"
           style={{
-            transform: `translateX(${mousePosition.x * 0.1}px) translateY(${mousePosition.y * 0.1}px)`
+            transform: `translateX(${mousePosition.x * 0.1}px) translateY(${
+              mousePosition.y * 0.1
+            }px)`,
           }}
         />
         <motion.div
@@ -144,7 +161,9 @@ const Hero = () => {
           variants={floatingVariants}
           animate="animate"
           style={{
-            transform: `translateX(${-mousePosition.x * 0.05}px) translateY(${-mousePosition.y * 0.05}px)`
+            transform: `translateX(${-mousePosition.x * 0.05}px) translateY(${
+              -mousePosition.y * 0.05
+            }px)`,
           }}
         />
       </div>
@@ -161,7 +180,9 @@ const Hero = () => {
           className="glass-card-premium rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-16 glow-effect group card-3d-intense"
           variants={itemVariants}
           style={{
-            transform: `perspective(1000px) rotateX(${mousePosition.y * 0.01}deg) rotateY(${mousePosition.x * 0.01}deg)`
+            transform: `perspective(1000px) rotateX(${
+              mousePosition.y * 0.01
+            }deg) rotateY(${mousePosition.x * 0.01}deg)`,
           }}
         >
           {/* Status Badge */}
@@ -177,77 +198,110 @@ const Hero = () => {
             <div className="w-2 h-2 bg-accent-500 rounded-full animate-pulse-slower"></div>
           </motion.div>
 
-          {/* Hero Content Layout */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Ultra-Premium Hero Layout */}
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center min-h-[70vh]">
             {/* Left Column - Text Content */}
-            <div className="lg:order-1 text-center lg:text-left">
-
-              {/* Main Title */}
-              <motion.div className="mb-8 sm:mb-12">
-                <motion.h1
-                  className="text-4xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-black mb-6 sm:mb-8 leading-none"
-                  initial={{ opacity: 0, y: 100, scale: 0.5 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 1, delay: 0.2, ease: [0.6, -0.05, 0.01, 0.99] }}
-                >
-                  <span className="gradient-text-premium">Abhishek</span>
-                  <br />
-                  <span className="text-white/80 text-3xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">Mishra</span>
+            <div className="lg:col-span-7 text-center lg:text-left space-y-8">
+              {/* Main Title with Advanced Typography */}
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <motion.h1 className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-black leading-none">
+                  <motion.span
+                    className="block gradient-text-premium"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                  >
+                    Abhishek
+                  </motion.span>
+                  <motion.span
+                    className="block text-white/90 text-4xl sm:text-6xl lg:text-7xl xl:text-8xl mt-2"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                  >
+                    Mishra
+                  </motion.span>
                 </motion.h1>
 
-                {/* Animated Title Rotation */}
+                {/* Advanced Title Rotation with Enhanced Effects */}
                 <motion.div
-                  className="relative h-12 sm:h-16 md:h-20 overflow-hidden"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  className="relative h-16 sm:h-20 lg:h-24 overflow-hidden"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
                   <AnimatePresence mode="wait">
-                    <motion.h2
+                    <motion.div
                       key={currentTitleIndex}
-                      className="absolute inset-0 flex items-center justify-center lg:justify-start text-lg sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-bold text-gray-300"
-                      initial={{ y: 50, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: -50, opacity: 0 }}
-                      transition={{ duration: 0.5 }}
+                      className="absolute inset-0 flex items-center justify-center lg:justify-start"
+                      initial={{ y: 60, opacity: 0, rotateX: 90 }}
+                      animate={{ y: 0, opacity: 1, rotateX: 0 }}
+                      exit={{ y: -60, opacity: 0, rotateX: -90 }}
+                      transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
-                      <FaCode className="mr-4 text-primary-500 animate-pulse" />
-                      {titles[currentTitleIndex]}
-                      <FaRocket className="ml-4 text-secondary-500 animate-bounce-slow" />
-                    </motion.h2>
+                      <div className="flex items-center gap-4 glass-card px-6 py-3 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10">
+                        <FaCode className="text-2xl text-primary-500 animate-pulse" />
+                        <span className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                          {titles[currentTitleIndex]}
+                        </span>
+                        <FaRocket className="text-2xl text-secondary-500 animate-bounce" />
+                      </div>
+                    </motion.div>
                   </AnimatePresence>
                 </motion.div>
               </motion.div>
 
-              {/* Enhanced Description */}
+              {/* Enhanced Description with Better Typography */}
               <motion.p
-                variants={itemVariants}
-                className="text-gray-300 text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl max-w-4xl lg:max-w-none mx-auto lg:mx-0 mb-8 sm:mb-12 leading-relaxed px-4 lg:px-0"
+                className="text-gray-300 text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-3xl lg:max-w-none mx-auto lg:mx-0"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.0 }}
               >
                 Passionate{" "}
-                <span className="gradient-text font-bold">Full Stack Developer</span>{" "}
+                <span className="font-bold bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent">
+                  Full Stack Developer
+                </span>{" "}
                 with{" "}
-                <span className="text-accent-400 font-bold">2+ years</span>{" "}
+                <span className="text-accent-400 font-bold text-2xl">2+ years</span>{" "}
                 of experience crafting{" "}
-                <span className="text-primary-400 font-bold">cutting-edge web applications</span>.
+                <span className="text-primary-400 font-bold">
+                  cutting-edge web applications
+                </span>
+                .
                 <br />
-                Specialized in{" "}
-                <span className="gradient-text font-bold">React • Angular • C# • ASP.NET Core</span>
+                <span className="text-lg text-gray-400 mt-2 block">
+                  Specialized in{" "}
+                  <span className="font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    React • Angular • C# • ASP.NET Core
+                  </span>
+                </span>
               </motion.p>
 
-              {/* Premium Action Buttons */}
+              {/* Ultra-Premium Action Buttons */}
               <motion.div
-                variants={itemVariants}
-                className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 mb-12 sm:mb-16 px-4 lg:px-0"
+                className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
               >
                 <motion.button
-                  onClick={() => scrollToSection('#contact')}
-                  className="btn-primary group relative overflow-hidden"
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  onClick={() => scrollToSection("#contact")}
+                  className="group relative px-8 py-4 bg-gradient-to-r from-primary-500 via-primary-600 to-secondary-500 text-white font-semibold rounded-2xl overflow-hidden transition-all duration-500"
+                  whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="relative z-10 flex items-center gap-3">
-                    <FaRocket />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                  </div>
+                  <span className="relative z-10 flex items-center gap-3 text-lg">
+                    <FaRocket className="group-hover:animate-bounce" />
                     Let's Collaborate
                   </span>
                 </motion.button>
@@ -255,55 +309,88 @@ const Hero = () => {
                 <motion.a
                   href="/Abhishek_Mishra_Resume.pdf"
                   download="Abhishek_Mishra_Resume.pdf"
-                  className="btn-outline flex items-center gap-3 group"
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="group relative px-8 py-4 border-2 border-primary-500/50 text-primary-400 font-semibold rounded-2xl backdrop-blur-xl bg-white/5 hover:bg-primary-500/10 hover:text-white transition-all duration-500 overflow-hidden"
+                  whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <motion.div
-                    animate={{ y: [0, -3, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    <FaDownload />
-                  </motion.div>
-                  <span>Download Resume</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 to-secondary-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative z-10 flex items-center gap-3 text-lg">
+                    <motion.div
+                      animate={{ y: [0, -4, 0] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      <FaDownload className="group-hover:animate-pulse" />
+                    </motion.div>
+                    Download Resume
+                  </span>
                 </motion.a>
               </motion.div>
             </div>
 
-            {/* Right Column - Profile Image */}
-            <div className="lg:order-2 flex justify-center lg:justify-end">
+            {/* Right Column - Ultra-Premium Profile Image */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
               <motion.div
                 className="relative group"
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0, scale: 0.8, rotateY: 20 }}
+                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                whileHover={{ scale: 1.02 }}
               >
-                {/* Image Container with Glass Effect */}
-                <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden glass-card-premium group-hover:shadow-2xl transition-all duration-500">
+                {/* Outer Glow Ring */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 rounded-full opacity-20 group-hover:opacity-40 blur-2xl transition-all duration-700"></div>
+
+                {/* Image Container with Advanced Effects */}
+                <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden">
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 via-secondary-500/20 to-accent-500/20"></div>
+
                   {/* Profile Image */}
                   <motion.img
                     src="/abhishek-profile.jpg"
                     alt="Abhishek Mishra - Full Stack Developer"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    className="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-110"
+                    initial={{ opacity: 0, scale: 1.2 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 0.5 }}
+                    transition={{ duration: 1.2, delay: 0.7 }}
                   />
 
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-500/30 via-transparent to-secondary-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                  {/* Glow Effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 rounded-3xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10"></div>
+                  {/* Glass Border Effect */}
+                  <div className="absolute inset-0 rounded-full border-4 border-white/20 group-hover:border-white/40 transition-all duration-500"></div>
+
+                  {/* Inner Glow */}
+                  <div className="absolute inset-2 rounded-full border border-white/10 group-hover:border-primary-400/50 transition-all duration-500"></div>
                 </div>
 
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full animate-pulse"></div>
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-accent-500 to-primary-500 rounded-full animate-bounce"></div>
+                {/* Floating Tech Icons */}
+                <motion.div
+                  className="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl"
+                  animate={{ y: [-5, 5, -5], rotate: [0, 10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                >
+                  <FaCode className="text-white text-xl" />
+                </motion.div>
+
+                <motion.div
+                  className="absolute -bottom-6 -left-6 w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl"
+                  animate={{ y: [5, -5, 5], rotate: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                >
+                  <FaRocket className="text-white text-lg" />
+                </motion.div>
+
+                <motion.div
+                  className="absolute top-1/2 -left-8 w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center shadow-2xl"
+                  animate={{ x: [-3, 3, -3], scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+                >
+                  <FaStar className="text-white text-sm" />
+                </motion.div>
               </motion.div>
             </div>
           </div>
-
 
           {/* Premium Social Links */}
           <motion.div
@@ -316,22 +403,22 @@ const Hero = () => {
                 href: "https://github.com/Am1234567899",
                 label: "GitHub",
                 color: "hover:text-gray-300",
-                bg: "hover:bg-gray-700/20"
+                bg: "hover:bg-gray-700/20",
               },
               {
                 icon: <FaLinkedin size={32} />,
                 href: "https://linkedin.com/in/abhishekmishra",
                 label: "LinkedIn",
                 color: "hover:text-blue-400",
-                bg: "hover:bg-blue-500/20"
+                bg: "hover:bg-blue-500/20",
               },
               {
                 icon: <FaEnvelope size={32} />,
                 href: "mailto:abhimaster369@gmail.com",
                 label: "Email",
                 color: "hover:text-accent-400",
-                bg: "hover:bg-accent-500/20"
-              }
+                bg: "hover:bg-accent-500/20",
+              },
             ].map((social, index) => (
               <motion.a
                 key={index}
@@ -343,7 +430,7 @@ const Hero = () => {
                   scale: 1.2,
                   y: -10,
                   rotateY: 15,
-                  rotateX: 10
+                  rotateX: 10,
                 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, y: 30, rotateX: -90 }}
@@ -351,7 +438,7 @@ const Hero = () => {
                 transition={{
                   duration: 0.8,
                   delay: 1 + index * 0.2,
-                  ease: [0.6, -0.05, 0.01, 0.99]
+                  ease: [0.6, -0.05, 0.01, 0.99],
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -366,34 +453,6 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Premium Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 2 }}
-        >
-          <motion.div
-            className="glass-card-premium p-4 rounded-2xl group cursor-pointer"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
-            whileHover={{ scale: 1.1 }}
-            onClick={() => scrollToSection('#about')}
-          >
-            <div className="w-8 h-12 border-2 border-primary-500/70 rounded-full flex justify-center relative overflow-hidden">
-              <motion.div
-                className="w-2 h-4 bg-gradient-to-b from-primary-500 to-secondary-500 rounded-full mt-2"
-                animate={{
-                  y: [0, 20, 0],
-                  opacity: [1, 0, 1],
-                  scale: [1, 0.5, 1]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </div>
-          </motion.div>
-        </motion.div>
       </motion.div>
     </section>
   );

@@ -63,7 +63,7 @@ A modern, fully responsive portfolio website built with React, featuring advance
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/abhishekmishra/portfolio.git
+   git clone https://github.com/Am1234567899/AbhishekPortfolioNew.git
    ```
 
 2. Navigate to the project directory:
@@ -136,7 +136,7 @@ AbhishekPortfolio/
 - **Email**: abhimaster369@gmail.com
 - **Phone**: +91 6392517138
 - **LinkedIn**: [linkedin.com/in/abhishekmishra](https://linkedin.com/in/abhishekmishra)
-- **GitHub**: [github.com/abhishekmishra](https://github.com/abhishekmishra)
+- **GitHub**: [github.com/Am1234567899](https://github.com/Am1234567899)
 
 ## 🚀 Quick Deploy
 

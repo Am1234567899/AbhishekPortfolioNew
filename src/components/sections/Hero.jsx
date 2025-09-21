@@ -272,7 +272,7 @@ const Hero = () => {
             {[
               {
                 icon: <FaGithub size={32} />,
-                href: "https://github.com/abhishekmishra",
+                href: "https://github.com/Am1234567899",
                 label: "GitHub",
                 color: "hover:text-gray-300",
                 bg: "hover:bg-gray-700/20"

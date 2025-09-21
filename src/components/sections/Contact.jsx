@@ -219,7 +219,7 @@ const Contact = () => {
     {
       icon: <FaGithub className="text-2xl" />,
       name: "GitHub",
-      link: "https://github.com/abhishekmishra",
+      link: "https://github.com/Am1234567899",
     },
   ];
 

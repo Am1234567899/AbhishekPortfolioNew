@@ -1,0 +1,153 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 4 0 R
+>>
+>>
+/Contents 5 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Times-Roman
+>>
+endobj
+
+5 0 obj
+<<
+/Length 1500
+>>
+stream
+BT
+/F1 24 Tf
+50 750 Td
+(ABHISHEK MISHRA) Tj
+0 -30 Td
+/F1 16 Tf
+(Full Stack Developer) Tj
+0 -40 Td
+/F1 12 Tf
+(Email: abhimaster369@gmail.com) Tj
+0 -20 Td
+(Phone: +91 6392517138) Tj
+0 -20 Td
+(Location: India) Tj
+0 -40 Td
+/F1 16 Tf
+(PROFESSIONAL SUMMARY) Tj
+0 -25 Td
+/F1 12 Tf
+(Passionate Full Stack Developer with 2+ years of experience in web application) Tj
+0 -15 Td
+(development. Specialized in React, Angular, C#, and ASP.NET Core technologies.) Tj
+0 -15 Td
+(Strong background in creating scalable web solutions and user-friendly interfaces.) Tj
+0 -40 Td
+/F1 16 Tf
+(WORK EXPERIENCE) Tj
+0 -25 Td
+/F1 14 Tf
+(Software Developer - Oreqo Software Private Ltd) Tj
+0 -15 Td
+/F1 12 Tf
+(2023 - Present) Tj
+0 -15 Td
+(- Developing React applications with modern JavaScript/TypeScript) Tj
+0 -15 Td
+(- Building responsive and interactive user interfaces) Tj
+0 -15 Td
+(- Collaborating with cross-functional teams on web projects) Tj
+0 -25 Td
+/F1 14 Tf
+(Junior Developer - Audex Logistics) Tj
+0 -15 Td
+/F1 12 Tf
+(2022 - 2023) Tj
+0 -15 Td
+(- Worked with Angular, C#, ASP.NET Core, and MSSQL) Tj
+0 -15 Td
+(- Developed warehouse management systems) Tj
+0 -15 Td
+(- Implemented backend APIs and database solutions) Tj
+0 -40 Td
+/F1 16 Tf
+(TECHNICAL SKILLS) Tj
+0 -25 Td
+/F1 12 Tf
+(Frontend: React, Angular, JavaScript, TypeScript, HTML5, CSS3, Tailwind CSS) Tj
+0 -15 Td
+(Backend: C#, ASP.NET Core, Node.js, RESTful APIs) Tj
+0 -15 Td
+(Database: MSSQL, MongoDB, PostgreSQL) Tj
+0 -15 Td
+(Tools: Git, Visual Studio, VS Code, Postman) Tj
+0 -40 Td
+/F1 16 Tf
+(KEY PROJECTS) Tj
+0 -25 Td
+/F1 14 Tf
+(Warehouse Management System) Tj
+0 -15 Td
+/F1 12 Tf
+(- Built comprehensive WMS using Angular and ASP.NET Core) Tj
+0 -15 Td
+(- Implemented inventory tracking and management features) Tj
+0 -25 Td
+/F1 14 Tf
+(SSM Residency Management) Tj
+0 -15 Td
+/F1 12 Tf
+(- Developed property management solution with React) Tj
+0 -15 Td
+(- Created booking and tenant management systems) Tj
+0 -25 Td
+/F1 14 Tf
+(Transport Management System) Tj
+0 -15 Td
+/F1 12 Tf
+(- Built logistics platform for route optimization) Tj
+0 -15 Td
+(- Integrated real-time tracking and reporting features) Tj
+ET
+endstream
+endobj
+
+xref
+0 6
+0000000000 65535 f
+0000000010 00000 n
+0000000053 00000 n
+0000000110 00000 n
+0000000251 00000 n
+0000000329 00000 n
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+1881
+%%EOF

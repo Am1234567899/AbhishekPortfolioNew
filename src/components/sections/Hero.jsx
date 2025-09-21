@@ -392,9 +392,6 @@ const Hero = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
-            <p className="text-xs text-gray-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              Scroll to explore
-            </p>
           </motion.div>
         </motion.div>
       </motion.div>

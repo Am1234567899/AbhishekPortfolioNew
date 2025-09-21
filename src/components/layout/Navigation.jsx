@@ -18,7 +18,14 @@ const Navigation = () => {
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 80;
+      const elementPosition = element.offsetTop;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
       setIsOpen(false);
     }
   };
@@ -35,6 +42,19 @@ const Navigation = () => {
 
   return (
     <>
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
       {/* Desktop & Mobile Navigation */}
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -90,25 +110,25 @@ const Navigation = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="md:hidden absolute top-full left-0 right-0 glass-nav backdrop-blur-2xl border-t border-white/10"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden absolute top-full left-0 right-0 z-50 bg-dark-900/98 backdrop-blur-2xl border-t border-white/10 shadow-2xl"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="px-4 py-6 space-y-4">
+              <div className="px-4 py-6 space-y-2">
                 {navItems.map((item, index) => (
                   <motion.button
                     key={item.href}
                     onClick={() => scrollToSection(item.href)}
-                    className="flex items-center gap-3 w-full text-left p-3 rounded-lg glass-card hover:bg-white/5 text-gray-300 hover:text-primary-400 transition-all duration-300"
+                    className="flex items-center gap-3 w-full text-left p-4 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 hover:text-primary-400 transition-all duration-300 border border-white/10 hover:border-primary-500/30"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <span className="text-primary-500">{item.icon}</span>
-                    <span className="font-medium">{item.label}</span>
+                    <span className="text-primary-500 text-lg">{item.icon}</span>
+                    <span className="font-medium text-base">{item.label}</span>
                   </motion.button>
                 ))}
               </div>

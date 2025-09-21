@@ -4,6 +4,7 @@ import Navigation from './components/layout/Navigation.jsx';
 import Hero from './components/sections/Hero.jsx';
 import About from './components/sections/About.jsx';
 import Experience from './components/sections/Experience.jsx';
+import Education from './components/sections/Education.jsx';
 import Projects from './components/sections/Projects.jsx';
 import Skills from './components/sections/Skills.jsx';
 import Contact from './components/sections/Contact.jsx';
@@ -29,6 +30,7 @@ function App() {
           <Hero />
           <About />
           <Experience />
+          <Education />
           <Projects />
           <Skills />
           <Contact />

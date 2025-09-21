@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaHome, FaUser, FaCog, FaEnvelope } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaUser, FaBriefcase, FaGraduationCap, FaProjectDiagram, FaCog, FaEnvelope } from 'react-icons/fa';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +26,9 @@ const Navigation = () => {
   const navItems = [
     { href: '#home', label: 'Home', icon: <FaHome /> },
     { href: '#about', label: 'About', icon: <FaUser /> },
+    { href: '#experience', label: 'Experience', icon: <FaBriefcase /> },
+    { href: '#education', label: 'Education', icon: <FaGraduationCap /> },
+    { href: '#projects', label: 'Projects', icon: <FaProjectDiagram /> },
     { href: '#skills', label: 'Skills', icon: <FaCog /> },
     { href: '#contact', label: 'Contact', icon: <FaEnvelope /> },
   ];

@@ -214,7 +214,7 @@ const Contact = () => {
     {
       icon: <FaLinkedin className="text-2xl" />,
       name: "LinkedIn",
-      link: "https://linkedin.com/in/abhishekmishra",
+      link: "https://www.linkedin.com/in/abhishek-mishra-4164341a2",
     },
     {
       icon: <FaGithub className="text-2xl" />,

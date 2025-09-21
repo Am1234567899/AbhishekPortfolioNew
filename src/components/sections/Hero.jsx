@@ -407,7 +407,7 @@ const Hero = () => {
               },
               {
                 icon: <FaLinkedin size={32} />,
-                href: "https://linkedin.com/in/abhishekmishra",
+                href: "https://www.linkedin.com/in/abhishek-mishra-4164341a2",
                 label: "LinkedIn",
                 color: "hover:text-blue-400",
                 bg: "hover:bg-blue-500/20",

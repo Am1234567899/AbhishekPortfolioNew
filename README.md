@@ -135,7 +135,7 @@ AbhishekPortfolio/
 
 - **Email**: abhimaster369@gmail.com
 - **Phone**: +91 6392517138
-- **LinkedIn**: [linkedin.com/in/abhishekmishra](https://linkedin.com/in/abhishekmishra)
+- **LinkedIn**: [linkedin.com/in/abhishek-mishra-4164341a2](https://www.linkedin.com/in/abhishek-mishra-4164341a2)
 - **GitHub**: [github.com/Am1234567899](https://github.com/Am1234567899)
 
 ## 🚀 Quick Deploy
